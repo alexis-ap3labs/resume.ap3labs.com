@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './satoshi.css';
+
+@layer base {
+  :root {
+    --color-dark: #171717;
+    --color-cream: #feffff;
+  }
+
+  body {
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+
+@layer components {
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+  .text-dark {
+    color: var(--color-dark);
+  }
+  .text-light {
+    color: var(--color-cream);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
