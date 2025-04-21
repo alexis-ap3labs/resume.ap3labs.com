@@ -1,12 +1,15 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { Resend } from 'resend';
+import { RESEND_API_KEY } from '$env/static/private';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(RESEND_API_KEY);
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
     const { name, email, message } = await request.json();
+
+    console.log('Using API key:', RESEND_API_KEY);
 
     await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>', // Vous pourrez personnaliser ceci après vérification du domaine
