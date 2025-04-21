@@ -1,4 +1,4 @@
-# Personal Portfolio 🚀
+# Personal Portfolio
 
 <div align="center">
 
@@ -8,50 +8,50 @@
 
 </div>
 
-## ✨ Overview
+## Overview
 
-Modern and minimalist portfolio website showcasing my journey as a developer. Built with SvelteKit and styled with Tailwind CSS for a smooth, responsive experience.
+Developer focused on DeFi integration with a background in finance and a deep understanding of crypto systems. This portfolio showcases my journey as a developer, built with modern web technologies including SvelteKit and Tailwind CSS for a smooth, responsive experience.
 
-## 🎯 Features
+## Features
 
-- 🎨 **Modern Design** - Clean and professional user interface
-- 📱 **Fully Responsive** - Perfect display on all devices
-- 🚄 **Fast Performance** - Optimized loading and smooth transitions
-- 📄 **Dynamic Content** - Easy to update and maintain
-- 🌙 **Dark Mode** - Comfortable viewing experience
-- 📬 **Contact Form** - Direct way to reach out
+- Modern Design - Clean and professional user interface
+- Fully Responsive - Perfect display on all devices
+- Fast Performance - Optimized loading and smooth transitions
+- Dynamic Content - Easy to update and maintain
+- Dark Mode - Comfortable viewing experience
+- Contact Form - Direct way to reach out
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Frontend Framework:** SvelteKit
-- **Styling:** Tailwind CSS
-- **Animations:** Svelte Transitions
-- **Deployment:** Vercel
+- Frontend Framework: SvelteKit
+- Styling: Tailwind CSS
+- Animations: Svelte Transitions
+- Deployment: Vercel
 
-## 🚀 Quick Start
+## Development
 
-1. **Clone the repository**
+1. Clone the repository
 ```bash
 git clone https://github.com/your-username/portfolio.git
 ```
 
-2. **Install dependencies**
+2. Install dependencies
 ```bash
 cd portfolio
 npm install
 ```
 
-3. **Start development server**
+3. Start development server
 ```bash
 npm run dev
 ```
 
-4. **Build for production**
+4. Build for production
 ```bash
 npm run build
 ```
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 /
@@ -67,32 +67,27 @@ npm run build
     └── resume.pdf
 ```
 
-## 📸 Screenshots
+## Screenshots
 
 [Add screenshots of your portfolio here]
 
-## 🔗 Live Demo
+## Live Demo
 
 [Add your deployed portfolio link here]
 
-## 📫 Contact
+## Contact
 
 Feel free to reach out if you have any questions or just want to connect!
 
-- **GitHub:** [your-username]
-- **LinkedIn:** [your-linkedin]
-- **Email:** [your-email]
+- GitHub: [alexis-ap3labs](https://github.com/alexis-ap3labs)
+- LinkedIn: [alexispierreprn](https://www.linkedin.com/in/alexispierreprn/)
+- Email: [alexis@ap3labs.com](mailto:alexis@ap3labs.com)
 
-## 📄 License
+## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License.
 
----
-<div align="center">
-Made with ❤️ and SvelteKit
-</div>
-
-## 🚀 Deployment
+## Deployment
 
 This project is configured for deployment on Vercel. To deploy:
 
@@ -116,3 +111,8 @@ export default {
 ```bash
 vercel
 ```
+
+---
+<div align="center">
+Made with SvelteKit
+</div>
