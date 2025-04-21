@@ -1,15 +1,27 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
-  
+  import ContactModal from './ContactModal.svelte';
+
   let isIntroMounted = false;
-  
+  let isVisible = false;
+  let isModalOpen = false;
+
   onMount(() => {
     // Démarrer les animations après celles du header (300ms + 800ms + un peu de marge)
     setTimeout(() => {
       isIntroMounted = true;
     }, 1300);
+    isVisible = true;
   });
+
+  function openModal() {
+    isModalOpen = true;
+  }
+
+  function closeModal() {
+    isModalOpen = false;
+  }
 </script>
 
 <style>
@@ -76,9 +88,9 @@
           I focus on building secure and accessible DeFi applications, bridging technical innovation with financial expertise.
         </p>
 
-        <div in:fly={{ y: 20, duration: 800, delay: 500 }}>
-          <a 
-            href="/contact"
+        <div class="mt-12">
+          <button
+            on:click={openModal}
             class="contact-button group relative inline-block px-6 py-3 rounded border
                    overflow-hidden transition-colors duration-300"
           >
@@ -90,10 +102,12 @@
                          translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
             
             <!-- Texte -->
-            <span class="relative z-10">Get in touch</span>
-          </a>
+            <span class="relative z-10">Get in Touch</span>
+          </button>
         </div>
       </div>
     {/if}
   </div>
-</section> 
+</section>
+
+<ContactModal isOpen={isModalOpen} onClose={closeModal} /> 

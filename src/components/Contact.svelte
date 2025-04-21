@@ -1,11 +1,21 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import ContactModal from './ContactModal.svelte';
   
   let isVisible = false;
+  let isModalOpen = false;
   
   onMount(() => {
     isVisible = true;
   });
+
+  function openModal() {
+    isModalOpen = true;
+  }
+
+  function closeModal() {
+    isModalOpen = false;
+  }
 </script>
 
 <section 
@@ -38,8 +48,8 @@
     </p>
     
     <div>
-      <a 
-        href="mailto:alexis@ap3labs.com"
+      <button
+        on:click={openModal}
         class="contact-button group relative inline-block px-6 py-3 rounded border
                overflow-hidden transition-colors duration-300"
       >
@@ -51,11 +61,13 @@
                      translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
         
         <!-- Texte -->
-        <span class="relative z-10">Say Hello</span>
-      </a>
+        <span class="relative z-10">Get in Touch</span>
+      </button>
     </div>
   </div>
 </section>
+
+<ContactModal isOpen={isModalOpen} onClose={closeModal} />
 
 <style>
   .number {
