@@ -231,6 +231,7 @@
                     <a 
                         href="#" 
                         class="cursor-not-allowed opacity-50"
+                        on:click|preventDefault
                     >
                         Resume
                     </a>

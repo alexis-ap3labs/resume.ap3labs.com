@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
+  import { fade, fly, scale } from 'svelte/transition';
   export let isOpen = false;
   export let onClose: () => void;
 
@@ -8,6 +8,7 @@
   let message = '';
   let isLoading = false;
   let errorMessage = '';
+  let isSuccess = false;
 
   async function handleSubmit(e: Event) {
     e.preventDefault();
@@ -27,13 +28,19 @@
 
       if (!response.ok) throw new Error(data.error || 'Failed to send message');
       
-      // Réinitialiser le formulaire
-      name = '';
-      email = '';
-      message = '';
+      // Afficher le message de succès
+      isSuccess = true;
       
-      onClose();
-      alert('Message sent successfully!');
+      // Fermer la modale après 3 secondes
+      setTimeout(() => {
+        isSuccess = false;
+        onClose();
+        // Réinitialiser le formulaire
+        name = '';
+        email = '';
+        message = '';
+      }, 3000);
+
     } catch (error: unknown) {
       errorMessage = error instanceof Error 
         ? error.message 
@@ -46,83 +53,111 @@
 
 {#if isOpen}
   <div
-    class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
-    transition:fade
+    class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    transition:fade={{ duration: 200 }}
     on:click={onClose}
   >
     <div
-      class="bg-[#171717] rounded-lg p-6 w-full max-w-md border border-light/10"
+      class="bg-[#171717] rounded-lg p-6 w-full max-w-md border border-light/10 shadow-xl"
+      transition:scale={{ duration: 300, start: 0.95 }}
       on:click|stopPropagation
     >
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-bold text-light">Get in Touch</h2>
-        <button
-          class="text-light/50 hover:text-light/80 transition-colors"
-          on:click={onClose}
+      {#if isSuccess}
+        <div 
+          in:fly={{ y: 20, duration: 300, delay: 200 }}
+          out:fade={{ duration: 200 }}
+          class="text-center py-8 space-y-4"
         >
-          ✕
-        </button>
-      </div>
-
-      <form on:submit={handleSubmit} class="space-y-4">
-        <div>
-          <label for="name" class="block text-sm font-medium text-light/80">Name</label>
-          <input
-            type="text"
-            id="name"
-            bind:value={name}
-            required
-            class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                   focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
-          />
+          <div 
+            class="text-[#FFA33C] text-4xl mb-4"
+            in:scale={{ duration: 400, delay: 300 }}
+          >
+            ✓
+          </div>
+          <h3 
+            class="text-xl font-bold text-light"
+            in:fly={{ y: 10, duration: 300, delay: 400 }}
+          >
+            Thank you for reaching out!
+          </h3>
+          <p 
+            class="text-light/80"
+            in:fly={{ y: 10, duration: 300, delay: 500 }}
+          >
+            I'll get back to you as soon as possible.
+          </p>
+        </div>
+      {:else}
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-bold text-light">Get in Touch</h2>
+          <button
+            class="text-light/50 hover:text-light/80 transition-colors"
+            on:click={onClose}
+          >
+            ✕
+          </button>
         </div>
 
-        <div>
-          <label for="email" class="block text-sm font-medium text-light/80">Email</label>
-          <input
-            type="email"
-            id="email"
-            bind:value={email}
-            required
-            class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                   focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
-          />
-        </div>
+        <form on:submit={handleSubmit} class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-light/80">Name</label>
+            <input
+              type="text"
+              id="name"
+              bind:value={name}
+              required
+              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
+                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+            />
+          </div>
 
-        <div>
-          <label for="message" class="block text-sm font-medium text-light/80">Message</label>
-          <textarea
-            id="message"
-            bind:value={message}
-            required
-            rows="4"
-            class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                   focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
-          ></textarea>
-        </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-light/80">Email</label>
+            <input
+              type="email"
+              id="email"
+              bind:value={email}
+              required
+              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
+                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+            />
+          </div>
 
-        <button
-          type="submit"
-          disabled={isLoading}
-          class="w-full contact-button group relative inline-block px-6 py-3 rounded border
-                 overflow-hidden transition-colors duration-300 {isLoading ? 'opacity-50 cursor-not-allowed' : ''}"
-        >
-          <!-- Effet de remplissage -->
-          <span class="fill absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-          
-          <!-- Effet de brillance -->
-          <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent
-                       translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-          
-          <!-- Texte -->
-          <span class="relative z-10">
-            {isLoading ? 'Sending...' : 'Send Message'}
-          </span>
-        </button>
-      </form>
+          <div>
+            <label for="message" class="block text-sm font-medium text-light/80">Message</label>
+            <textarea
+              id="message"
+              bind:value={message}
+              required
+              rows="4"
+              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
+                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+            ></textarea>
+          </div>
 
-      {#if errorMessage}
-        <p class="mt-2 text-red-500 text-sm">{errorMessage}</p>
+          <button
+            type="submit"
+            disabled={isLoading}
+            class="w-full contact-button group relative inline-block px-6 py-3 rounded border
+                   overflow-hidden transition-colors duration-300 {isLoading ? 'opacity-50 cursor-not-allowed' : ''}"
+          >
+            <!-- Effet de remplissage -->
+            <span class="fill absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></span>
+            
+            <!-- Effet de brillance -->
+            <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent
+                         translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+            
+            <!-- Texte -->
+            <span class="relative z-10">
+              {isLoading ? 'Sending...' : 'Send Message'}
+            </span>
+          </button>
+        </form>
+
+        {#if errorMessage}
+          <p class="mt-2 text-red-500 text-sm">{errorMessage}</p>
+        {/if}
       {/if}
     </div>
   </div>
@@ -132,6 +167,12 @@
   .contact-button {
     color: #FFA33C;
     border-color: #FFA33C;
+    transition: all 0.3s ease;
+  }
+
+  .contact-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 163, 60, 0.2);
   }
 
   .contact-button :global(.fill) {

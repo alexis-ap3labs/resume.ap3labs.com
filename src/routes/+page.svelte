@@ -129,11 +129,11 @@
     in:fly={{ x: 50, duration: 500, delay: 1000 }}
   >
     <a 
-      href="mailto:alexis.peron@ap3labs.com" 
+      href="mailto:alexis@ap3labs.com" 
       class="vertical-email text-gray-400 hover:text-[#FFA33C] transition-all duration-300 hover:-translate-y-1"
       style="writing-mode: vertical-rl;"
     >
-      alexis.peron@ap3labs.com
+      alexis@ap3labs.com
     </a>
     <div class="w-[1px] h-48 bg-gray-400 mt-6"></div>
   </div>
