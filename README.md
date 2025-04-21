@@ -26,7 +26,7 @@ Modern and minimalist portfolio website showcasing my journey as a developer. Bu
 - **Frontend Framework:** SvelteKit
 - **Styling:** Tailwind CSS
 - **Animations:** Svelte Transitions
-- **Deployment:** [Your deployment platform]
+- **Deployment:** Vercel
 
 ## 🚀 Quick Start
 
@@ -91,3 +91,28 @@ This project is open source and available under the [MIT License](LICENSE).
 <div align="center">
 Made with ❤️ and SvelteKit
 </div>
+
+## 🚀 Deployment
+
+This project is configured for deployment on Vercel. To deploy:
+
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
+
+2. Configure SvelteKit adapter in `svelte.config.js`:
+```javascript
+import adapter from '@sveltejs/adapter-vercel';
+
+export default {
+  kit: {
+    adapter: adapter()
+  }
+};
+```
+
+3. Deploy to Vercel:
+```bash
+vercel
+```
