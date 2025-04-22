@@ -2,25 +2,46 @@
     import { onMount } from 'svelte';
     import { fade, fly } from 'svelte/transition';
   
+    /**
+     * Props
+     */
+    export let activeSection = '';
+  
+    /**
+     * State variables
+     */
     let lastScrollY = 0;
     let isNavVisible = true;
     let hasScrolled = false;
     let isMenuOpen = false;
     let isHeaderMounted = false;
-    export let activeSection = '';
   
+    /**
+     * Checks if a section is currently active
+     * @param {string} section - Section identifier
+     * @returns {boolean}
+     */
     $: isActive = (section: string) => {
         return activeSection === section;
     };
 
+    /**
+     * Toggles mobile menu state
+     */
     const toggleMenu = () => {
         isMenuOpen = !isMenuOpen;
     };
 
+    /**
+     * Closes mobile menu when a link is clicked
+     */
     const handleLinkClick = () => {
         isMenuOpen = false;
     };
   
+    /**
+     * Initializes header animations and scroll behavior
+     */
     onMount(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
@@ -31,7 +52,7 @@
   
         window.addEventListener('scroll', handleScroll, { passive: true });
         
-        // Délai plus long avant le début des animations
+        // Delay header animations
         setTimeout(() => {
             isHeaderMounted = true;
         }, 300);
@@ -43,24 +64,28 @@
 </script>
   
 <style>
+    /* Section number styling */
     .number {
-      color: #FFA33C;  /* Orange très lumineux avec une touche de jaune */
-      opacity: 1 !important; /* Force l'opacité à rester à 1 */
+      color: var(--color-orange);
+      opacity: 1 !important;
     }
 
+    /* Resume button styling */
     .resume-button {
-      color: #FFA33C;
-      border-color: #FFA33C;
+      color: var(--color-orange);
+      border-color: var(--color-orange);
     }
 
     .resume-button :global(.fill) {
-      background-color: rgba(255, 163, 60, 0.1);
+      background-color: var(--color-orange-10);
     }
 
+    /* Active link styling */
     .active-link {
-      color: #FFA33C !important;
+      color: var(--color-orange) !important;
     }
 
+    /* Mobile menu styles */
     .hamburger {
         display: none;
     }
@@ -72,6 +97,7 @@
         gap: 3rem;
     }
 
+    /* Mobile responsive styles */
     @media (max-width: 768px) {
         nav {
             display: flex;
@@ -83,7 +109,10 @@
             display: block;
             cursor: pointer;
             z-index: 20;
-            position: relative;
+            position: absolute;
+            right: 1.5rem;  /* 24px from the right edge */
+            top: 50%;      /* Center vertically */
+            transform: translateY(-50%);
         }
 
         .nav-links {
@@ -149,7 +178,7 @@
     }
 
     .hamburger span {
-        @apply bg-[#FFA33C]; /* Utilise la même couleur orange que les autres éléments */
+        @apply bg-[var(--color-orange)];
     }
 </style>
   
@@ -248,9 +277,9 @@
                 in:fly={{ y: -20, duration: 800, delay: 700 }}
             >
                 <div class="flex flex-col gap-1.5">
-                    <span class="block w-6 h-0.5 bg-[#FFA33C] transition-transform duration-300" class:rotate-45={isMenuOpen} class:translate-y-2={isMenuOpen}></span>
-                    <span class="block w-6 h-0.5 bg-[#FFA33C] transition-opacity duration-300" class:opacity-0={isMenuOpen}></span>
-                    <span class="block w-6 h-0.5 bg-[#FFA33C] transition-transform duration-300" class:-rotate-45={isMenuOpen} class:-translate-y-2={isMenuOpen}></span>
+                    <span class="block w-6 h-0.5 bg-[var(--color-orange)] transition-transform duration-300" class:rotate-45={isMenuOpen} class:translate-y-2={isMenuOpen}></span>
+                    <span class="block w-6 h-0.5 bg-[var(--color-orange)] transition-opacity duration-300" class:opacity-0={isMenuOpen}></span>
+                    <span class="block w-6 h-0.5 bg-[var(--color-orange)] transition-transform duration-300" class:-rotate-45={isMenuOpen} class:-translate-y-2={isMenuOpen}></span>
                 </div>
             </button>
         {/if}

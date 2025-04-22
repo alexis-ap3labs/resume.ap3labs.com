@@ -3,6 +3,9 @@
   import { fade, fly } from 'svelte/transition';
   import { isPageLoaded } from '../stores/loading';
   
+  /**
+   * Job interface defining the structure of work experience entries
+   */
   type Job = {
     title: string;
     company: string;
@@ -10,6 +13,10 @@
     points: string[];
   };
 
+  /**
+   * Array of work experiences
+   * @type {Job[]}
+   */
   const jobs: Job[] = [
     {
       title: "Full Stack Developer",
@@ -68,9 +75,16 @@
     }
   ];
 
+  /**
+   * State variables
+   */
   let activeTab = 0;
   let scrollContainer: HTMLElement;
+  let expandedJobs = new Set<number>();  // Pour suivre quels jobs sont développés
 
+  /**
+   * Handles initial page load and scroll to section if URL contains hash
+   */
   onMount(() => {
     const hash = window.location.hash.slice(1);
     
@@ -93,6 +107,10 @@
     }
   });
 
+  /**
+   * Scrolls the tab container to center the active tab
+   * @param {number} index - Index of the active tab
+   */
   function scrollToActiveTab(index: number) {
     if (!scrollContainer) return;
     
@@ -105,7 +123,6 @@
     const buttonLeft = activeButton.offsetLeft;
     const buttonWidth = activeButton.offsetWidth;
 
-    // Calcule la position de scroll pour centrer le bouton
     const targetScroll = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
 
     scrollContainer.scrollTo({
@@ -114,46 +131,68 @@
     });
   }
 
+  /**
+   * Updates active tab and triggers scroll animation
+   * @param {number} index - Index of the selected tab
+   */
   function handleTabChange(index: number) {
     activeTab = index;
     scrollToActiveTab(index);
   }
+
+  /**
+   * Toggle l'expansion des points pour un job
+   * @param {number} index - Index du job
+   */
+  function toggleJobPoints(index: number) {
+    if (expandedJobs.has(index)) {
+      expandedJobs.delete(index);
+    } else {
+      expandedJobs.add(index);
+    }
+    expandedJobs = expandedJobs; // Force Svelte reactivity
+  }
 </script>
 
 <style>
+  /* Section number styling */
   .number {
-    color: #FFA33C;
+    color: var(--color-orange);
     opacity: 1;
   }
 
+  /* Arrow bullet points styling */
   .arrow {
-    color: #FFA33C;
+    color: var(--color-orange);
     opacity: 1;
   }
 
+  /* Active tab styles */
   .active {
-    color: #FFA33C !important;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-orange) !important;
+    background-color: var(--color-light-5);
   }
 
   .active-bar {
-    background-color: #FFA33C;
+    background-color: var(--color-orange);
   }
 
+  /* Company name styling */
   .company {
-    color: #FFA33C;
+    color: var(--color-orange);
   }
 
-  /* Masquer la scrollbar tout en gardant le scroll fonctionnel */
+  /* Hide scrollbar while maintaining functionality */
   .hide-scrollbar {
-    -ms-overflow-style: none;  /* Pour Internet Explorer et Edge */
-    scrollbar-width: none;     /* Pour Firefox */
+    -ms-overflow-style: none;  /* For IE and Edge */
+    scrollbar-width: none;     /* For Firefox */
   }
   
   .hide-scrollbar::-webkit-scrollbar {
-    display: none;  /* Pour Chrome, Safari et Opera */
+    display: none;  /* For Chrome, Safari and Opera */
   }
 
+  /* Company link hover effect */
   .company-link {
     position: relative;
     display: inline-block;
@@ -165,16 +204,28 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #FFA33C;
+    background-color: var(--color-orange);
     transition: width 0.3s ease;
   }
 
   .company-link:hover :global(.underline) {
     width: 100%;
   }
+
+  /* Bouton See More */
+  .see-more-btn {
+    color: var(--color-orange);
+    border: 1px solid var(--color-orange);
+    transition: all 0.3s ease;
+  }
+
+  .see-more-btn:hover {
+    background-color: var(--color-orange-10);
+  }
 </style>
 
-<section id="experience" class="py-24 bg-dark scroll-mt-20">
+<!-- Experience Section -->
+<section id="experience" class="pt-16 pb-16 bg-dark scroll-mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
     <div 
       class="flex items-center gap-4 mb-8 md:mb-16"
@@ -251,12 +302,24 @@
         </h3>
         <p class="text-light/50 font-mono text-sm md:text-base mb-4">{jobs[activeTab].date}</p>
         <ul class="space-y-4">
-          {#each jobs[activeTab].points as point}
-            <li class="flex gap-2 text-light/70 text-base md:text-lg">
-              <span class="arrow flex-shrink-0">▹</span>
-              <span>{point}</span>
-            </li>
+          {#each jobs[activeTab].points as point, i}
+            {#if i === 0 || expandedJobs.has(activeTab) || window.innerWidth >= 768}
+              <li class="flex gap-2 text-light/70 text-base md:text-lg">
+                <span class="arrow flex-shrink-0">▹</span>
+                <span>{point}</span>
+              </li>
+            {/if}
           {/each}
+          
+          <!-- Bouton See More sur mobile uniquement -->
+          {#if jobs[activeTab].points.length > 1 && window.innerWidth < 768}
+            <button 
+              class="see-more-btn mt-4 px-4 py-2 rounded-md text-sm font-mono w-full md:hidden"
+              on:click={() => toggleJobPoints(activeTab)}
+            >
+              {expandedJobs.has(activeTab) ? 'Show Less' : 'See More'}
+            </button>
+          {/if}
         </ul>
       </div>
     </div>

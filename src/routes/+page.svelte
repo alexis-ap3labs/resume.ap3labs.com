@@ -8,6 +8,9 @@
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
 
+  /**
+   * State variables
+   */
   let activeSection = '';
   let sectionsVisible = {
     intro: false,
@@ -17,6 +20,10 @@
     contact: false
   };
 
+  /**
+   * Social media links configuration
+   * @type {Array<{name: string, url: string, icon: string}>}
+   */
   const socialLinks = [
     {
       name: 'Twitter',
@@ -50,12 +57,13 @@
     }
   ];
 
-  // Fonction pour gérer le changement de hash
+  /**
+   * Handles hash change in URL and scrolls to corresponding section
+   */
   function handleHashChange() {
     const hash = window.location.hash.slice(1);
     activeSection = hash;
     
-    // Ne scroller que pour les changements de hash après le chargement initial
     if (hash && document.body.classList.contains('loaded')) {
       const section = document.getElementById(hash);
       if (section) {
@@ -68,24 +76,29 @@
     }
   }
 
+  /**
+   * Initialize page behavior and animations
+   */
   onMount(() => {
-    // Définir la section active initiale
+    // Set initial active section
     activeSection = window.location.hash.slice(1);
     
-    // Écouter les changements futurs de hash
+    // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
 
+    // Initialize intersection observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Observer uniquement pour le debug/développement si nécessaire
+        // Observer for future development if needed
       });
     }, { threshold: 0.5 });
 
+    // Observe all sections
     document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
     });
 
-    // Déclencher les animations séquentiellement
+    // Trigger sequential section animations
     setTimeout(() => sectionsVisible.intro = true, 100);
     setTimeout(() => sectionsVisible.about = true, 300);
     setTimeout(() => sectionsVisible.experience = true, 500);
@@ -99,10 +112,52 @@
   });
 </script>
 
+<style>
+  /* Vertical text styling */
+  .vertical-text {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Email link styling */
+  .vertical-email {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    font-family: 'Satoshi', sans-serif;
+    transform: translateY(0);
+  }
+
+  /* Social icon styling */
+  .social-icon {
+    transform: translateY(0);
+  }
+
+  :global(.social-icon svg) {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Section fade-in animation */
+  section {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- Header Component -->
 <Header {activeSection} />
 
 <!-- Social Links Sidebar -->
 {#if sectionsVisible.intro}
+  <!-- Social links sidebar content -->
   <div 
     class="fixed left-4 sm:left-14 top-[120px] hidden md:flex flex-col items-center z-50"
     in:fly={{ x: -50, duration: 500, delay: 1000 }}
@@ -142,6 +197,7 @@
 <!-- Main Content -->
 <main class="min-h-screen bg-dark">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+    <!-- Section components with animations -->
     {#if sectionsVisible.intro}
       <div in:fly={{ y: 50, duration: 800 }}>
         <Intro />
@@ -174,38 +230,6 @@
   </div>
 </main>
 
-<style>
-  .vertical-text {
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-  }
-
-  .vertical-email {
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    font-family: 'Satoshi', sans-serif;
-    transform: translateY(0);
-  }
-
-  .social-icon {
-    transform: translateY(0);
-  }
-
-  :global(.social-icon svg) {
-    width: 20px;
-    height: 20px;
-  }
-
-  section {
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
+<svelte:head>
+    <title>Alexis Péron - Full Stack Developer | AP3 Labs</title>
+</svelte:head>

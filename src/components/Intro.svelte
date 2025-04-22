@@ -3,18 +3,27 @@
   import { fade, fly } from 'svelte/transition';
   import ContactModal from './ContactModal.svelte';
 
+  /**
+   * State variables
+   */
   let isIntroMounted = false;
   let isVisible = false;
   let isModalOpen = false;
 
+  /**
+   * Initialize component animations after header animations
+   */
   onMount(() => {
-    // Démarrer les animations après celles du header (300ms + 800ms + un peu de marge)
+    // Start animations after header animations (300ms + 800ms + margin)
     setTimeout(() => {
       isIntroMounted = true;
     }, 1300);
     isVisible = true;
   });
 
+  /**
+   * Modal control functions
+   */
   function openModal() {
     isModalOpen = true;
   }
@@ -25,25 +34,29 @@
 </script>
 
 <style>
+  /* Contact button styling */
   .contact-button {
-    color: #FFA33C;
-    border-color: #FFA33C;
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+    cursor: pointer;
   }
 
   .contact-button :global(.fill) {
-    background-color: rgba(255, 163, 60, 0.1);
+    background-color: var(--color-orange-10);
   }
 
+  /* Text accent color */
   .intro-text {
-    color: #FFA33C;
+    color: var(--color-orange);
   }
 
+  /* Company link styling */
   .company-link {
-    color: #FFA33C;
+    color: var(--color-orange);
   }
 
   .company-link :global(.underline) {
-    background-color: #FFA33C;
+    background-color: var(--color-orange);
   }
 </style>
 
@@ -76,16 +89,16 @@
           class="text-base sm:text-lg text-light/70 max-w-[720px] mb-12 leading-relaxed"
           in:fly={{ y: 20, duration: 800, delay: 400 }}
         >
-          I'm passionate about blockchain technology and DeFi, combining development skills with deep knowledge in crypto finance. 
+          I'm <span class="font-bold">passionate about blockchain technology and DeFi</span>, combining development skills with deep knowledge in crypto finance. 
           Since 2017, I've been exploring and contributing to the crypto ecosystem. Currently at 
           <a 
             href="/" 
-            class="company-link relative group"
+            class="company-link relative group font-bold"
           >
             AP3 Labs
             <span class="underline absolute -bottom-1 left-0 w-0 h-[1px] group-hover:w-full transition-all duration-300"></span>
           </a>, 
-          I focus on building secure and accessible DeFi applications, bridging technical innovation with financial expertise.
+          I focus on <span class="font-bold">building secure and accessible DeFi applications</span>, bridging technical innovation with financial expertise.
         </p>
 
         <div class="mt-12">

@@ -2,25 +2,83 @@
   import { onMount } from 'svelte';
   import ContactModal from './ContactModal.svelte';
   
+  /**
+   * State for section visibility animation
+   * @type {boolean}
+   */
   let isVisible = false;
+
+  /**
+   * State for modal visibility
+   * @type {boolean}
+   */
   let isModalOpen = false;
   
+  // Initialize visibility on component mount
   onMount(() => {
     isVisible = true;
   });
 
+  /**
+   * Opens the contact modal
+   */
   function openModal() {
     isModalOpen = true;
   }
 
+  /**
+   * Closes the contact modal
+   */
   function closeModal() {
     isModalOpen = false;
   }
 </script>
 
+<style>
+  /* Section number styling */
+  .number {
+    color: var(--color-orange);
+    opacity: 1;
+  }
+
+  /* Contact button styling */
+  .contact-button {
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+  }
+
+  .contact-button :global(.fill) {
+    background-color: var(--color-orange);
+    opacity: 0.1;
+  }
+
+  /* Section fade-in animation styles */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s ease-out;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  /* Font families */
+  h2 {
+    font-family: 'SF Mono', monospace;
+  }
+
+  h3, p {
+    font-family: 'Satoshi', sans-serif;
+  }
+</style>
+
 <section 
   id="contact" 
-  class="py-24 bg-dark scroll-mt-20 fade-in-section"
+  class="pt-16 pb-16 bg-dark scroll-mt-20 fade-in-section"
   class:is-visible={isVisible}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
@@ -67,46 +125,4 @@
   </div>
 </section>
 
-<ContactModal isOpen={isModalOpen} onClose={closeModal} />
-
-<style>
-  .number {
-    color: #FFA33C;
-    opacity: 1;
-  }
-
-  .contact-button {
-    color: #FFA33C;
-    border-color: #FFA33C;
-  }
-
-  .contact-button :global(.fill) {
-    background-color: rgba(255, 163, 60, 0.1);
-  }
-
-  .fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s ease-out;
-  }
-  
-  .fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
-
-  section {
-    margin: 0 auto;
-    position: relative;
-  }
-
-  h2 {
-    font-family: 'SF Mono', monospace;
-  }
-
-  h3, p {
-    font-family: 'Satoshi', sans-serif;
-  }
-</style> 
+<ContactModal isOpen={isModalOpen} onClose={closeModal} /> 

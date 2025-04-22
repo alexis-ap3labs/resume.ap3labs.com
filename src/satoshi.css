@@ -1,3 +1,11 @@
+/**
+ * Satoshi Font Family Configuration
+ * A modern, geometric sans-serif font
+ */
+
+/**
+ * Regular Weight (400)
+ */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Regular.otf') format('opentype'),
@@ -6,6 +14,9 @@
   font-style: normal;
 }
 
+/**
+ * Medium Weight (500)
+ */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Medium.otf') format('opentype'),
@@ -14,6 +25,9 @@
   font-style: normal;
 }
 
+/**
+ * Bold Weight (700)
+ */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Bold.otf') format('opentype'),
@@ -22,6 +36,9 @@
   font-style: normal;
 }
 
+/**
+ * Light Weight (300)
+ */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Light.otf') format('opentype'),
@@ -30,6 +47,9 @@
   font-style: normal;
 }
 
+/**
+ * Black Weight (900)
+ */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Black.otf') format('opentype'),

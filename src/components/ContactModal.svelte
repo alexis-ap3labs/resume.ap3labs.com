@@ -1,8 +1,15 @@
 <script lang="ts">
   import { fade, fly, scale } from 'svelte/transition';
+
+  /**
+   * Props
+   */
   export let isOpen = false;
   export let onClose: () => void;
 
+  /**
+   * Form state
+   */
   let name = '';
   let email = '';
   let message = '';
@@ -10,6 +17,10 @@
   let errorMessage = '';
   let isSuccess = false;
 
+  /**
+   * Handles form submission
+   * @param {Event} e - Form submission event
+   */
   async function handleSubmit(e: Event) {
     e.preventDefault();
     isLoading = true;
@@ -28,14 +39,13 @@
 
       if (!response.ok) throw new Error(data.error || 'Failed to send message');
       
-      // Afficher le message de succès
+      // Show success message
       isSuccess = true;
       
-      // Fermer la modale après 3 secondes
+      // Close modal after delay and reset form
       setTimeout(() => {
         isSuccess = false;
         onClose();
-        // Réinitialiser le formulaire
         name = '';
         email = '';
         message = '';
@@ -51,14 +61,34 @@
   }
 </script>
 
+<style>
+  /* Contact button styling with hover effects */
+  .contact-button {
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .contact-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--color-orange-10);
+  }
+
+  .contact-button :global(.fill) {
+    background-color: var(--color-orange-10);
+  }
+</style>
+
+<!-- Modal Container -->
 {#if isOpen}
   <div
-    class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    class="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-[2px] z-50 flex items-center justify-center p-4"
     transition:fade={{ duration: 200 }}
     on:click={onClose}
   >
     <div
-      class="bg-[#171717] rounded-lg p-6 w-full max-w-md border border-light/10 shadow-xl"
+      class="bg-dark rounded-lg p-6 w-full max-w-md border border-light/10 shadow-xl"
       transition:scale={{ duration: 300, start: 0.95 }}
       on:click|stopPropagation
     >
@@ -69,7 +99,7 @@
           class="text-center py-8 space-y-4"
         >
           <div 
-            class="text-[#FFA33C] text-4xl mb-4"
+            class="text-orange text-4xl mb-4"
             in:scale={{ duration: 400, delay: 300 }}
           >
             ✓
@@ -106,8 +136,8 @@
               id="name"
               bind:value={name}
               required
-              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+              class="mt-1 block w-full rounded-md bg-dark border-light/10 text-light shadow-sm 
+                     focus:border-orange focus:ring-orange focus:ring-opacity-50"
             />
           </div>
 
@@ -118,8 +148,8 @@
               id="email"
               bind:value={email}
               required
-              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+              class="mt-1 block w-full rounded-md bg-dark border-light/10 text-light shadow-sm 
+                     focus:border-orange focus:ring-orange focus:ring-opacity-50"
             />
           </div>
 
@@ -130,8 +160,8 @@
               bind:value={message}
               required
               rows="4"
-              class="mt-1 block w-full rounded-md bg-[#171717] border-light/10 text-light shadow-sm 
-                     focus:border-[#FFA33C] focus:ring-[#FFA33C] focus:ring-opacity-50"
+              class="mt-1 block w-full rounded-md bg-dark border-light/10 text-light shadow-sm 
+                     focus:border-orange focus:ring-orange focus:ring-opacity-50"
             ></textarea>
           </div>
 
@@ -161,21 +191,4 @@
       {/if}
     </div>
   </div>
-{/if}
-
-<style>
-  .contact-button {
-    color: #FFA33C;
-    border-color: #FFA33C;
-    transition: all 0.3s ease;
-  }
-
-  .contact-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 163, 60, 0.2);
-  }
-
-  .contact-button :global(.fill) {
-    background-color: rgba(255, 163, 60, 0.1);
-  }
-</style> 
+{/if} 
