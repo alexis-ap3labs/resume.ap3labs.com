@@ -32,7 +32,7 @@ Developer focused on DeFi integration with a background in finance and a deep un
 
 1. Clone the repository
 ```bash
-git clone https://github.com/alexis-ap3labs/resume.git
+git clone https://github.com/[USERNAME]/resume.git
 ```
 
 2. Install dependencies
