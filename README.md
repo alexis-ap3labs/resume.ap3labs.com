@@ -32,7 +32,7 @@ Developer focused on DeFi integration with a background in finance and a deep un
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/alexis-ap3labs/resume.git
 ```
 
 2. Install dependencies
@@ -69,11 +69,13 @@ npm run build
 
 ## Screenshots
 
-[Add screenshots of your portfolio here]
+![Screenshot 1](./static/screenshot1.png)
+![Screenshot 2](./static/screenshot2.png)
+![Screenshot 3](./static/screenshot3.png)
 
 ## Live Demo
 
-[Add your deployed portfolio link here]
+https://resume.ap3labs.com/
 
 ## Contact
 
