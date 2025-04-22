@@ -37,7 +37,7 @@ git clone https://github.com/alexis-ap3labs/resume.git
 
 2. Install dependencies
 ```bash
-cd portfolio
+cd resume
 npm install
 ```
 
@@ -58,13 +58,32 @@ npm run build
 ├── src/
 │   ├── components/
 │   │   ├── About.svelte
+│   │   ├── Contact.svelte
+│   │   ├── ContactModal.svelte
 │   │   ├── Experience.svelte
-│   │   ├── Projects.svelte
-│   │   └── Contact.svelte
+│   │   ├── Header.svelte
+│   │   ├── Intro.svelte
+│   │   ├── Loader.svelte
+│   │   └── Projects.svelte
+│   ├── lib/
+│   │   └── types.ts
 │   ├── routes/
-│   └── static/
+│   │   ├── +layout.svelte
+│   │   ├── +page.svelte
+│   │   └── api/
+│   │       └── contact/
+│   │           └── +server.ts
+│   ├── stores/
+│   │   ├── loading.ts
+│   │   └── navigation.ts
+│   ├── app.css
+│   ├── app.html
+│   └── satoshi.css
 └── static/
-    └── resume.pdf
+    ├── screenshot1.png
+    ├── screenshot2.png
+    ├── screenshot3.png
+    └── og-image.jpg
 ```
 
 ## Screenshots
