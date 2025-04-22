@@ -238,18 +238,21 @@
     <meta name="description" content="Passionate Full Stack Developer with expertise in JavaScript, TypeScript, React, and Node.js. Discover my portfolio and professional journey at AP3 Labs." />
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://ap3.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://resume.ap3labs.com" />
     <meta property="og:title" content="Alexis Péron - Full Stack Developer | AP3 Labs" />
     <meta property="og:description" content="Passionate Full Stack Developer with expertise in JavaScript, TypeScript, React, and Node.js. Discover my portfolio and professional journey at AP3 Labs." />
-    <meta property="og:image" content="https://ap3.dev/og-image.jpg" />
+    <meta property="og:image" content="https://resume.ap3labs.com/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://resume.ap3labs.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ap3.dev" />
+    <meta property="twitter:domain" content="resume.ap3labs.com" />
+    <meta property="twitter:url" content="https://resume.ap3labs.com" />
     <meta name="twitter:title" content="Alexis Péron - Full Stack Developer | AP3 Labs" />
     <meta name="twitter:description" content="Passionate Full Stack Developer with expertise in JavaScript, TypeScript, React, and Node.js. Discover my portfolio and professional journey at AP3 Labs." />
-    <meta name="twitter:image" content="https://ap3.dev/og-image.jpg" />
+    <meta name="twitter:image" content="https://resume.ap3labs.com/og-image.jpg" />
 </svelte:head>
