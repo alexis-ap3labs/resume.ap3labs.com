@@ -191,82 +191,98 @@
         <!-- Logo -->
         {#if isHeaderMounted}
             <a 
-                href="/" 
-                class="absolute left-6 md:left-12 top-1/2 -translate-y-1/2"
-                in:fly={{ y: -20, duration: 800 }}
+              href="https://ap3labs.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="absolute left-6 md:left-12 top-1/2 -translate-y-1/2"
+              in:fly={{ y: -20, duration: 800 }}
             >
-                <img src="ap3labs_logo.webp" alt="Logo" class="w-20 h-20 md:w-24 md:h-24 object-contain" />
+              <img src="ap3labs_logo.webp" alt="Logo" class="w-20 h-20 md:w-24 md:h-24 object-contain" />
             </a>
-
-            <!-- Navigation Links -->
-            <ul class="nav-links text-light/60" class:open={isMenuOpen}>
-                <li in:fly={{ y: -20, duration: 800, delay: 200 }}>
-                    <a 
-                        href="/#about" 
-                        class="group flex items-center gap-2 hover:text-primary transition-colors"
-                        class:active-link={isActive('about')}
-                        on:click={handleLinkClick}
-                    >
-                        <span class="number text-sm">01.</span>
-                        <span class="relative">
-                            About
-                            <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
-                        </span>
-                    </a>
-                </li>
-                <li in:fly={{ y: -20, duration: 800, delay: 300 }}>
-                    <a 
-                        href="/#experience" 
-                        class="group flex items-center gap-2 hover:text-primary transition-colors"
-                        class:active-link={isActive('experience')}
-                        on:click={handleLinkClick}
-                    >
-                        <span class="number text-sm">02.</span>
-                        <span class="relative">
-                            Experience
-                            <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
-                        </span>
-                    </a>
-                </li>
-                <li in:fly={{ y: -20, duration: 800, delay: 400 }}>
-                    <a 
-                        href="/#projects" 
-                        class="group flex items-center gap-2 hover:text-primary transition-colors"
-                        class:active-link={isActive('projects')}
-                        on:click={handleLinkClick}
-                    >
-                        <span class="number text-sm">03.</span>
-                        <span class="relative">
-                            Work
-                            <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
-                        </span>
-                    </a>
-                </li>
-                <li in:fly={{ y: -20, duration: 800, delay: 500 }}>
-                    <a 
-                        href="/#contact" 
-                        class="group flex items-center gap-2 hover:text-primary transition-colors"
-                        class:active-link={isActive('contact')}
-                        on:click={handleLinkClick}
-                    >
-                        <span class="number text-sm">04.</span>
-                        <span class="relative">
-                            Contact
-                            <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
-                        </span>
-                    </a>
-                </li>
-                <li in:fly={{ y: -20, duration: 800, delay: 600 }}>
-                    <a 
-                        href="#" 
-                        class="cursor-not-allowed opacity-50"
-                        on:click|preventDefault
-                    >
-                        Resume
-                    </a>
-                </li>
-            </ul>
         {/if}
+
+        <!-- Navigation Links -->
+        <ul class="nav-links text-light/60" class:open={isMenuOpen}>
+            <li in:fly={{ y: -20, duration: 800, delay: 200 }}>
+                <a 
+                    href="/#about" 
+                    class="group flex items-center gap-2 hover:text-primary transition-colors"
+                    class:active-link={isActive('about')}
+                    on:click={handleLinkClick}
+                >
+                    <span class="number text-sm">01.</span>
+                    <span class="relative">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                </a>
+            </li>
+            <li in:fly={{ y: -20, duration: 800, delay: 300 }}>
+                <a 
+                    href="/#experience" 
+                    class="group flex items-center gap-2 hover:text-primary transition-colors"
+                    class:active-link={isActive('experience')}
+                    on:click={handleLinkClick}
+                >
+                    <span class="number text-sm">02.</span>
+                    <span class="relative">
+                        Experience
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                </a>
+            </li>
+            <li in:fly={{ y: -20, duration: 800, delay: 400 }}>
+                <a 
+                    href="/#education" 
+                    class="group flex items-center gap-2 hover:text-primary transition-colors"
+                    class:active-link={isActive('education')}
+                    on:click={handleLinkClick}
+                >
+                    <span class="number text-sm">03.</span>
+                    <span class="relative">
+                        Education
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                </a>
+            </li>
+            <li in:fly={{ y: -20, duration: 800, delay: 500 }}>
+                <a 
+                    href="/#projects" 
+                    class="group flex items-center gap-2 hover:text-primary transition-colors"
+                    class:active-link={isActive('projects')}
+                    on:click={handleLinkClick}
+                >
+                    <span class="number text-sm">04.</span>
+                    <span class="relative">
+                        Work
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                </a>
+            </li>
+            <li in:fly={{ y: -20, duration: 800, delay: 600 }}>
+                <a 
+                    href="/#contact" 
+                    class="group flex items-center gap-2 hover:text-primary transition-colors"
+                    class:active-link={isActive('contact')}
+                    on:click={handleLinkClick}
+                >
+                    <span class="number text-sm">05.</span>
+                    <span class="relative">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                </a>
+            </li>
+            <li in:fly={{ y: -20, duration: 800, delay: 700 }}>
+                <a 
+                    href="#" 
+                    class="cursor-not-allowed opacity-50"
+                    on:click|preventDefault
+                >
+                    Resume
+                </a>
+            </li>
+        </ul>
 
         <!-- Hamburger Menu Button -->
         {#if isHeaderMounted}
@@ -274,7 +290,7 @@
                 class="hamburger"
                 on:click={toggleMenu}
                 aria-label="Toggle menu"
-                in:fly={{ y: -20, duration: 800, delay: 700 }}
+                in:fly={{ y: -20, duration: 800, delay: 800 }}
             >
                 <div class="flex flex-col gap-1.5">
                     <span class="block w-6 h-0.5 bg-[var(--color-orange)] transition-transform duration-300" class:rotate-45={isMenuOpen} class:translate-y-2={isMenuOpen}></span>

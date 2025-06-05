@@ -2,9 +2,11 @@
   import About from '../components/About.svelte';
   import Intro from '../components/Intro.svelte';
   import Experience from '../components/Experience.svelte';
+  import Education from '../components/Education.svelte';
   import Header from '../components/Header.svelte';
   import Projects from '../components/Projects.svelte';
   import Contact from '../components/Contact.svelte';
+  import FloatingHexagons from '../components/FloatingHexagons.svelte';
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
 
@@ -16,6 +18,7 @@
     intro: false,
     about: false,
     experience: false,
+    education: false,
     projects: false,
     contact: false
   };
@@ -26,10 +29,10 @@
    */
   const socialLinks = [
     {
-      name: 'Twitter',
-      url: 'https://twitter.com/alexispierreprn',
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+      name: 'X',
+      url: 'https://x.com/alexis_ap3labs',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>`
     },
     {
@@ -39,13 +42,6 @@
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
               <rect x="2" y="9" width="4" height="12" />
               <circle cx="4" cy="4" r="2" />
-            </svg>`
-    },
-    {
-      name: 'X',
-      url: 'https://x.com/alexis_ap3labs',
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>`
     },
     {
@@ -102,8 +98,9 @@
     setTimeout(() => sectionsVisible.intro = true, 100);
     setTimeout(() => sectionsVisible.about = true, 300);
     setTimeout(() => sectionsVisible.experience = true, 500);
-    setTimeout(() => sectionsVisible.projects = true, 700);
-    setTimeout(() => sectionsVisible.contact = true, 900);
+    setTimeout(() => sectionsVisible.education = true, 700);
+    setTimeout(() => sectionsVisible.projects = true, 900);
+    setTimeout(() => sectionsVisible.contact = true, 1100);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
@@ -143,6 +140,7 @@
   section {
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
+    background: transparent;
   }
 
   @keyframes fadeIn {
@@ -150,10 +148,18 @@
       opacity: 1;
     }
   }
+
+  /* Main content styling */
+  main {
+    background: transparent;
+  }
 </style>
 
 <!-- Header Component -->
 <Header {activeSection} />
+
+<!-- Floating Hexagons Background -->
+<FloatingHexagons />
 
 <!-- Social Links Sidebar -->
 {#if sectionsVisible.intro}
@@ -195,7 +201,7 @@
 {/if}
 
 <!-- Main Content -->
-<main class="min-h-screen bg-dark">
+<main class="min-h-screen">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
     <!-- Section components with animations -->
     {#if sectionsVisible.intro}
@@ -213,6 +219,12 @@
     {#if sectionsVisible.experience}
       <div in:fly={{ y: 50, duration: 800 }}>
         <Experience />
+      </div>
+    {/if}
+
+    {#if sectionsVisible.education}
+      <div in:fly={{ y: 50, duration: 800 }}>
+        <Education />
       </div>
     {/if}
 

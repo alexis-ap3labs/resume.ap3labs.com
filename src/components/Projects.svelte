@@ -22,7 +22,7 @@
   const projects: Project[] = [
     {
       title: "ERC-4626 DeFi Interface",
-      description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph. Custom wallet integration with Svelte stores and window.ethereum — no wagmi, no bloat.",
+      description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph.",
       image: "app-detrade.png",
       link: "https://app.detrade.fund/",
       technologies: ["TypeScript", "Svelte", "HTML/CSS", "TailwindCSS", "Ethers.js"],
@@ -153,7 +153,7 @@
     <!-- Section Title -->
     <div class="flex items-center gap-4 mb-8 md:mb-16">
       <h2 class="text-2xl font-mono whitespace-nowrap">
-        <span class="number">03.</span>
+        <span class="number">04.</span>
         <span class="text-light">Things I've Built</span>
       </h2>
       <div class="h-[1px] w-32 md:w-96 bg-light/20"></div>
