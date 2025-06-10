@@ -20,7 +20,7 @@
   const jobs: Job[] = [
     {
       title: "Full Stack Developer",
-      company: "DeTrade Fund",
+      company: "AP3 Labs",
       date: "September 2023 — Present",
       points: [
         "Developed and implemented a custom oracle service to provide reliable on-chain data for the fund's trading operations",
@@ -282,7 +282,7 @@
             {#if jobs[activeTab].company !== "CryptoGuys"}
               <a 
                 href={
-                  jobs[activeTab].company === "DeTrade Fund" ? "https://detrade.fund/" :
+                  jobs[activeTab].company === "AP3 Labs" ? "https://ap3labs.com/" :
                   jobs[activeTab].company === "Kaiko" ? "https://www.kaiko.com/" :
                   jobs[activeTab].company === "Coinhouse" ? "https://www.coinhouse.com/" :
                   jobs[activeTab].company === "Advanced Blockchain" ? "https://www.advancedblockchain.com/" :

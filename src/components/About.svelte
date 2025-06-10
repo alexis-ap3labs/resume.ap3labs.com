@@ -4,12 +4,12 @@
    * @type {string[]}
    */
   const technologies = [
-    'JavaScript',
+    'Svelte/SvelteKit',
     'TypeScript',
-    'Svelte',
-    'Python',
-    'HTML',
-    'CSS'
+    'Python/FastAPI',
+    'Web3 Integration',
+    'DeFi Protocols',
+    'Smart Contracts'
   ];
 </script>
 
@@ -91,9 +91,8 @@
           <p 
             class="text-base md:text-lg leading-relaxed"
           >
-            Starting with a <span class="font-bold">strong financial background</span>, I developed a deep fascination for 
-            blockchain systems. This dual perspective naturally led me into <span class="font-bold">development</span>, driven by 
-            the desire to build the mechanisms I was analyzing.
+            With a <span class="font-bold">background in finance</span>, I discovered blockchain technology and was immediately drawn to its potential. 
+            This unique perspective led me to <span class="font-bold">development</span>, where I could actively contribute to building the systems I was studying.
           </p>
 
           <p 
@@ -105,10 +104,10 @@
               <span class="underline"></span>
             </a> and 
             <a href="https://www.kaiko.com" target="_blank" rel="noopener noreferrer" class="company-link inline">
-              the industry's most trusted data provider.
+              the crypto industry's most trusted data provider
               <span class="underline"></span>
-            </a>
-            These experiences enhanced my <span class="font-bold">technical and financial expertise</span>.
+            </a>.
+            These experiences enhanced my <span class="font-bold">technical and financial expertise</span> in the crypto space.
           </p>
 
           <p 

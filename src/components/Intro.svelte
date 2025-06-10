@@ -89,16 +89,8 @@
           class="text-base sm:text-lg text-light/70 max-w-[720px] mb-12 leading-relaxed"
           in:fly={{ y: 20, duration: 800, delay: 400 }}
         >
-          I'm <span class="font-bold">passionate about blockchain technology and DeFi</span>, combining development skills with deep knowledge in crypto finance. 
-          Since 2017, I've been exploring and contributing to the crypto ecosystem. Currently at 
-          <a 
-            href="/" 
-            class="company-link relative group font-bold"
-          >
-            AP3 Labs
-            <span class="underline absolute -bottom-1 left-0 w-0 h-[1px] group-hover:w-full transition-all duration-300"></span>
-          </a>, 
-          I focus on <span class="font-bold">building secure and accessible DeFi applications</span>, bridging technical innovation with financial expertise.
+          As a long-time contributor to various crypto projects and DeFi applications, 
+          I focus on <span class="font-bold">building innovative financial solutions</span> that combine technical excellence with practical applications.
         </p>
 
         <div class="mt-12">

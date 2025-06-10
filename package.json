@@ -37,6 +37,8 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"html2pdf.js": "^0.10.3",
+		"pdf-lib": "^1.17.1",
 		"resend": "^4.3.0"
 	}
 }

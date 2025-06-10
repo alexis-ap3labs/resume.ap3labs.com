@@ -13,6 +13,7 @@
     location?: string;
     logo?: string;
     link?: string;
+    description: string;
   };
 
   /**
@@ -25,7 +26,8 @@
       degree: "M2 Finance Tech Data, Finance, General",
       date: "2020 - 2021",
       logo: "sorbonne.png",
-      link: "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/master-M/master-monnaie-banque-finance-assurance-KBUT5XXF/master-parcours-finance-technology-data-KBUT7IZ4.html"
+      link: "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/master-M/master-monnaie-banque-finance-assurance-KBUT5XXF/master-parcours-finance-technology-data-KBUT7IZ4.html",
+      description: "Specialized program combining finance, technology, and data analysis. Focused on quantitative finance, programming, and financial market technologies."
     },
     {
       school: "Fundação Dom Cabral",
@@ -33,21 +35,24 @@
       date: "2019 - 2020",
       location: "Belo Horizonte, Minas Gerais, Brazil",
       logo: "fdc.png",
-      link: "https://www.fdc.org.br/"
+      link: "https://www.fdc.org.br/",
+      description: "International MBA program with focus on business strategy, innovation, and emerging markets. Included exchange program with SKEMA Business School."
     },
     {
       school: "SKEMA Business School",
       degree: "Master of Business Administration - MBA, Business Administration and Management, General",
       date: "2019 - 2020",
       logo: "skema.png",
-      link: "https://www.skema.edu/fr"
+      link: "https://www.skema.edu/fr",
+      description: "Global business education with emphasis on digital transformation and international business. Part of the double degree program with FDC."
     },
     {
       school: "Lycée Français de Vienne",
-      degree: "Baccalauréat, Economics and Social Sciences",
+      degree: "Préparation aux Grandes Écoles, Economics and Social Sciences",
       date: "2016",
       logo: "lfv.png",
-      link: "https://lyceefrancais.at/"
+      link: "https://lyceefrancais.at/",
+      description: "Post-bac preparatory program in economics and social sciences. Intensive curriculum with focus on mathematics and economics, complemented by bilingual education in French and German."
     }
   ];
 
@@ -253,6 +258,9 @@
           {#if education[activeTab].location}
             <span class="block mt-1">{education[activeTab].location}</span>
           {/if}
+        </p>
+        <p class="text-light/70 text-base md:text-lg">
+          {education[activeTab].description}
         </p>
       </div>
     </div>
