@@ -243,10 +243,10 @@
 </main>
 
 <svelte:head>
-    <title>Alexis Péron - Web3 Solutions Architect @ AP3Labs | DeFi Expert</title>
+    <title>Alexis Péron - Full Stack Web3 Solutions Architect @ AP3Labs | DeFi Expert</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Alexis Péron - Web3 Solutions Architect @ AP3Labs | DeFi Expert" />
+    <meta name="title" content="Alexis Péron - Full Stack Web3 Solutions Architect @ AP3Labs | DeFi Expert" />
     <meta name="description" content="Web3 Solutions Architect and DeFi Expert at AP3Labs. Building innovative financial solutions and contributing to the future of decentralized finance." />
     
     <!-- Open Graph / Facebook -->

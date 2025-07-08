@@ -23,10 +23,10 @@
       company: "AP3 Labs",
       date: "September 2023 — Present",
       points: [
-        "Developed and implemented a custom oracle service to provide reliable on-chain data for the fund's trading operations",
-        "Built comprehensive documentation from scratch, enabling seamless integration and understanding of the protocol",
-        "Created an intuitive front-end application for users to interact with smart contracts and manage their investments",
-        "Integrated Lagoon's technology to enhance the fund's automated trading capabilities and risk management"
+        "Built DeTrade, a yield strategy platform based on ERC-7540 standard, integrating Lagoon's smart contracts without official documentation by reverse-engineering their architecture and developing a custom indexer via The Graph",
+        "Developed a proprietary oracle system to calculate NAV for investment strategies, aggregating on-chain data from DeFi protocols including Convex, Curve, Pendle, and Equilibria",
+        "Architected and executed the cross-chain migration of a decentralized perpetual exchange from Arbitrum to Monad testnet, adapting the protocol to the new VM's specific constraints while managing complex liquidity flows and price feed integrations",
+        "Created comprehensive front-end applications using SvelteKit for seamless user interaction with smart contracts and portfolio management"
       ]
     },
     {
