@@ -23,17 +23,17 @@
     {
       title: "ERC-4626 DeFi Interface",
       description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph.",
-      image: "app.detrade.fund.png",
+      image: "app1.png",
       link: "https://app.detrade.fund/",
       technologies: ["TypeScript", "Svelte", "HTML/CSS", "TailwindCSS", "Ethers.js"],
       featured: true
     },
     {
-      title: "Oracle NAV",
-      description: "Oracle for pushing NAVs and calculating vault asset liquidation value, leveraging on-chain smart contract data and APIs for asset conversion. Cron task in GitHub Actions for regular valuation pushes.",
-      image: "oracle.detrade.fund.png",
-      link: "https://oracle.detrade.fund/",
-      technologies: ["Python", "GitHub Actions", "Web3.py", "APIs", "Smart Contracts"],
+      title: "ERC-4626 DeFi Interface",
+      description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph.",
+      image: "app2.png",
+      link: "https://app.detrade.fund/",
+      technologies: ["TypeScript", "Svelte", "HTML/CSS", "TailwindCSS", "Ethers.js"],
       featured: true
     }
   ];
