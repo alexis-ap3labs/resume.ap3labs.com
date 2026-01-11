@@ -201,21 +201,21 @@
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 3px;">MBA, Business Administration and Management</h3>
+                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 3px;">Academic Exchange</h3>
                         <p style="font-size: 14px; color: #64748b; margin-bottom: 3px;"><a href="https://www.fdc.edu.br/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">Fundação Dom Cabral</a></p>
-                        <p style="font-size: 12px; color: #94a3b8;">2019 - 2020 | Belo Horizonte, Brazil</p>
-                    </div>
-
-                    <div style="margin-bottom: 15px;">
-                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 3px;">MBA, Business Administration and Management</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 3px;"><a href="https://www.skema-bs.fr/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">SKEMA Business School</a></p>
-                        <p style="font-size: 12px; color: #94a3b8;">2019 - 2020</p>
+                        <p style="font-size: 12px; color: #94a3b8;">2020 | Belo Horizonte, Brazil</p>
                     </div>
 
                     <div style="margin-bottom: 15px;">
                         <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 3px;">Certification AMF</h3>
                         <p style="font-size: 14px; color: #64748b; margin-bottom: 3px;"><a href="https://www.afg.asso.fr/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">AFG - Association Française de la Gestion financière</a></p>
                         <p style="font-size: 12px; color: #94a3b8;">Issued Dec 2019 | Credential ID: 500187485</p>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 3px;">MBA, Business Administration and Management</h3>
+                        <p style="font-size: 14px; color: #64748b; margin-bottom: 3px;"><a href="https://www.skema-bs.fr/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">SKEMA Business School</a></p>
+                        <p style="font-size: 12px; color: #94a3b8;">2016 - 2020</p>
                     </div>
 
                     <div style="margin-bottom: 15px;">

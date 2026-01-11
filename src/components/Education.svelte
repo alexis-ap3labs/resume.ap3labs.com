@@ -31,20 +31,12 @@
     },
     {
       school: "Fundação Dom Cabral",
-      degree: "MBA, Business Administration and Management, General",
-      date: "2019 - 2020",
+      degree: "Academic Exchange",
+      date: "2020",
       location: "Belo Horizonte, Minas Gerais, Brazil",
       logo: "fdc.png",
       link: "https://www.fdc.org.br/",
-      description: "International MBA program with focus on business strategy, innovation, and emerging markets. Included exchange program with SKEMA Business School."
-    },
-    {
-      school: "SKEMA Business School",
-      degree: "Master of Business Administration - MBA, Business Administration and Management, General",
-      date: "2019 - 2020",
-      logo: "skema.png",
-      link: "https://www.skema.edu/fr",
-      description: "Global business education with emphasis on digital transformation and international business. Part of the double degree program with FDC."
+      description: "International exchange program focused on business strategy, innovation, and emerging markets. Part of the MBA curriculum with emphasis on Latin American business environment."
     },
     {
       school: "AFG",
@@ -52,6 +44,14 @@
       date: "Issued Dec 2019",
       link: "https://www.afg.asso.fr/",
       description: "Professional certification from the French Financial Markets Authority (AMF). Credential ID: 500187485. Validates expertise in financial markets regulation, investment products, and client advisory services."
+    },
+    {
+      school: "SKEMA Business School",
+      degree: "Master of Business Administration - MBA, Business Administration and Management, General",
+      date: "2016 - 2020",
+      logo: "skema.png",
+      link: "https://www.skema.edu/fr",
+      description: "Global business education with emphasis on digital transformation and international business. Included international exchange program with Fundação Dom Cabral in Brazil."
     },
     {
       school: "Lycée Français de Vienne",
