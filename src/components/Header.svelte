@@ -81,7 +81,7 @@
                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                     </svg>
                                 </a>
-                                <a href="https://www.linkedin.com/in/alexispierreprn/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 2px solid #FFA33C; border-radius: 6px; text-decoration: none; color: #FFA33C; transition: background-color 0.3s;">
+                                <a href="https://www.linkedin.com/in/alexis-peron/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 2px solid #FFA33C; border-radius: 6px; text-decoration: none; color: #FFA33C; transition: background-color 0.3s;">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
                                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                                         <rect x="2" y="9" width="4" height="12" />
@@ -150,7 +150,7 @@
                     </div>
 
                     <div style="margin-bottom: 20px; page-break-inside: avoid;">
-                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 5px;">Co-founder @ <a href="https://cryptoguys.co/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">CryptoGuys</a></h3>
+                        <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 5px;">Co-founder @ <span style="color: #0a192f;">CryptoGuys</span></h3>
                         <p style="font-size: 12px; color: #64748b; margin-bottom: 10px;">July 2021 — August 2022</p>
                         <ul style="font-size: 13px; color: #64748b; line-height: 1.6; padding-left: 20px;">
                             <li>Designed automated crypto trading infrastructure connecting multiple exchanges.</li>

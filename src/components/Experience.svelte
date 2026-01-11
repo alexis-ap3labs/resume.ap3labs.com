@@ -298,8 +298,9 @@
       >
         <h3 class="text-lg md:text-xl text-light mb-1 md:mb-2">
           <span class="mr-1">{jobs[activeTab].title}</span>
-          <span class="company">@ 
-            {#if jobs[activeTab].company !== "CryptoGuys"}
+          <span class="company">@ </span>
+          {#if jobs[activeTab].company !== "CryptoGuys"}
+            <span class="company">
               <a 
                 href={
                   jobs[activeTab].company === "AP3 Labs" ? "https://ap3labs.com/" :
@@ -316,10 +317,10 @@
                 {jobs[activeTab].company}
                 <span class="underline"></span>
               </a>
-            {:else}
-              <span>{jobs[activeTab].company}</span>
-            {/if}
-          </span>
+            </span>
+          {:else}
+            <span class="text-light">{jobs[activeTab].company}</span>
+          {/if}
         </h3>
         <p class="text-light/50 font-mono text-sm md:text-base mb-4">{jobs[activeTab].date}</p>
         <ul class="space-y-4">
