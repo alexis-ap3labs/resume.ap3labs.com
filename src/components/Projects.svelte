@@ -29,11 +29,11 @@
       featured: true
     },
     {
-      title: "ERC-4626 DeFi Interface",
-      description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph.",
-      image: "app2.png",
-      link: "https://app.detrade.fund/",
-      technologies: ["TypeScript", "Svelte", "HTML/CSS", "TailwindCSS", "Ethers.js"],
+      title: "DeFi NAV Oracle",
+      description: "Real-time Net Asset Value oracle for DeFi portfolios. Aggregates positions across lending protocols (Aave, Compound), perp DEXs, and concentrated liquidity pools with accurate PnL attribution.",
+      image: "oracle.detrade.fund.png",
+      link: "https://oracle.detrade.fund/",
+      technologies: ["Python", "Web3.py", "MongoDB", "TheGraph", "Subgraphs"],
       featured: true
     }
   ];
