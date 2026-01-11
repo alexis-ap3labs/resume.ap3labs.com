@@ -47,6 +47,13 @@
       description: "Global business education with emphasis on digital transformation and international business. Part of the double degree program with FDC."
     },
     {
+      school: "AFG",
+      degree: "Certification AMF",
+      date: "Issued Dec 2019",
+      link: "https://www.afg.asso.fr/",
+      description: "Professional certification from the French Financial Markets Authority (AMF). Credential ID: 500187485. Validates expertise in financial markets regulation, investment products, and client advisory services."
+    },
+    {
       school: "Lycée Français de Vienne",
       degree: "Préparation aux Grandes Écoles, Economics and Social Sciences",
       date: "2016",

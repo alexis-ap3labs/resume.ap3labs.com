@@ -23,7 +23,7 @@
     {
       title: "ERC-4626 DeFi Interface",
       description: "A decentralized, modular DApp for interacting with ERC-4626 vaults. Deposit, withdraw, and track assets with real-time analytics via TheGraph.",
-      image: "app-detrade.png",
+      image: "app.detrade.fund.png",
       link: "https://app.detrade.fund/",
       technologies: ["TypeScript", "Svelte", "HTML/CSS", "TailwindCSS", "Ethers.js"],
       featured: true
@@ -31,7 +31,7 @@
     {
       title: "Oracle NAV",
       description: "Oracle for pushing NAVs and calculating vault asset liquidation value, leveraging on-chain smart contract data and APIs for asset conversion. Cron task in GitHub Actions for regular valuation pushes.",
-      image: "oracle-detrade.png",
+      image: "oracle.detrade.fund.png",
       link: "https://oracle.detrade.fund/",
       technologies: ["Python", "GitHub Actions", "Web3.py", "APIs", "Smart Contracts"],
       featured: true
@@ -250,11 +250,16 @@
               />
               <div class="absolute inset-0 bg-[var(--color-orange)] opacity-40 mix-blend-color group-hover:opacity-0 transition-opacity duration-300"></div>
               <!-- Icône pour Desktop -->
-              <div class="absolute top-4 right-4 external-link bg-[#2a2a2a] p-2 rounded-lg z-20">
+              <a 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="absolute top-4 right-4 external-link bg-[#2a2a2a] p-2 rounded-lg z-20"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-              </div>
+              </a>
             </div>
           </div>
         {/if}

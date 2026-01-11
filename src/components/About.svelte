@@ -4,12 +4,12 @@
    * @type {string[]}
    */
   const technologies = [
-    'Svelte/SvelteKit',
+    'Svelte / SvelteKit',
     'TypeScript',
-    'Python/FastAPI',
-    'Web3 Integration',
-    'DeFi Protocols',
-    'Smart Contracts'
+    'Python',
+    'EVM',
+    'MongoDB',
+    'GitHub Actions'
   ];
 </script>
 
@@ -77,7 +77,7 @@
         <div class="relative md:hidden flex justify-center w-full mb-0">
           <div class="relative w-full aspect-square max-w-[500px] rounded-lg overflow-hidden image-container">
             <img 
-              src="profile.jpg" 
+              src="alexis-peron.jpeg" 
               alt="Alexis Péron"
               class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
             />
@@ -91,29 +91,14 @@
           <p 
             class="text-base md:text-lg leading-relaxed"
           >
-            With a <span class="font-bold">background in finance</span>, I discovered blockchain technology and was immediately drawn to its potential. 
-            This unique perspective led me to <span class="font-bold">development</span>, where I could actively contribute to building the systems I was studying.
-          </p>
-
-          <p 
-            class="text-base md:text-lg leading-relaxed"
-          >
-            My journey includes working with 
-            <a href="https://www.coinhouse.com" target="_blank" rel="noopener noreferrer" class="company-link inline">
-              a leading crypto broker
-              <span class="underline"></span>
-            </a> and 
-            <a href="https://www.kaiko.com" target="_blank" rel="noopener noreferrer" class="company-link inline">
-              the crypto industry's most trusted data provider
-              <span class="underline"></span>
-            </a>.
-            These experiences enhanced my <span class="font-bold">technical and financial expertise</span> in the crypto space.
+            Today, I combine <span class="font-bold">engineering and financial design</span>: scoping integrations, analyzing onchain flows, and designing mechanisms across perps, liquidity pools, and DeFi infrastructure.
           </p>
 
           <p 
             class="text-base md:text-lg leading-relaxed mb-8"
           >
-            Here are some of the key technologies I work with:
+            I love going deep onchain: <span class="font-bold">protocol mechanics, oracles, monitoring, and risk-adjusted yield</span>.
+            This is the stack I work with most:
           </p>
 
           <!-- Liste des technologies -->
@@ -133,7 +118,7 @@
         <div class="relative hidden md:flex justify-start w-auto">
           <div class="relative w-[340px] h-[340px] rounded-lg overflow-hidden image-container">
             <img 
-              src="profile.jpg" 
+              src="alexis-peron.jpeg" 
               alt="Alexis Péron"
               class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
             />

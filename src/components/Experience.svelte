@@ -19,14 +19,24 @@
    */
   const jobs: Job[] = [
     {
+      title: "DeFi Ops & Account Management",
+      company: "Merkl",
+      date: "October 2024 — Present",
+      points: [
+        "Parsed Merkl API data to validate incentive campaigns (eligibility conditions + reward computations).",
+        "Scoped integrations with partners to translate their incentive goals into campaign specs.",
+        "Supported partners through rollout, troubleshooting issues and ensuring smooth attribution + distribution."
+      ]
+    },
+    {
       title: "Full Stack Developer",
       company: "AP3 Labs",
       date: "September 2023 — Present",
       points: [
-        "Built DeTrade, a yield strategy platform based on ERC-7540 standard, integrating Lagoon's smart contracts without official documentation by reverse-engineering their architecture and developing a custom indexer via The Graph",
-        "Developed a proprietary oracle system to calculate NAV for investment strategies, aggregating on-chain data from DeFi protocols including Convex, Curve, Pendle, and Equilibria",
-        "Architected and executed the cross-chain migration of a decentralized perpetual exchange from Arbitrum to Monad testnet, adapting the protocol to the new VM's specific constraints while managing complex liquidity flows and price feed integrations",
-        "Created comprehensive front-end applications using SvelteKit for seamless user interaction with smart contracts and portfolio management"
+        'Built <a href="https://app.detrade.fund" target="_blank" rel="noopener noreferrer" class="company-link">DeTrade<span class="underline"></span></a>: full-stack ERC-4626 yield platform with vault integrations, monitoring/oracles, and SvelteKit UX.',
+        "Designed proprietary NAV oracle: aggregates positions across lending, perps, and concentrated liquidity with PnL attribution.",
+        "Contributed to perp DEX: OI skew, ADL, funding/market balance, and liquidity pool design.",
+        "Scoped complex onchain systems: analyzed flows, risk/yield tradeoffs, and integration constraints."
       ]
     },
     {
@@ -222,6 +232,16 @@
   .see-more-btn:hover {
     background-color: var(--color-orange-10);
   }
+
+  /* Liens dans les points d'expérience */
+  :global(li a.company-link) {
+    color: var(--color-light);
+    transition: color 0.3s ease;
+  }
+
+  :global(li a.company-link:hover) {
+    color: var(--color-orange);
+  }
 </style>
 
 <!-- Experience Section -->
@@ -283,6 +303,7 @@
               <a 
                 href={
                   jobs[activeTab].company === "AP3 Labs" ? "https://ap3labs.com/" :
+                  jobs[activeTab].company === "Merkl" ? "https://merkl.angle.money/" :
                   jobs[activeTab].company === "Kaiko" ? "https://www.kaiko.com/" :
                   jobs[activeTab].company === "Coinhouse" ? "https://www.coinhouse.com/" :
                   jobs[activeTab].company === "Advanced Blockchain" ? "https://www.advancedblockchain.com/" :
@@ -306,7 +327,7 @@
             {#if i === 0 || expandedJobs.has(activeTab) || window.innerWidth >= 768}
               <li class="flex gap-2 text-light/70 text-base md:text-lg">
                 <span class="arrow flex-shrink-0">▹</span>
-                <span>{point}</span>
+                <span>{@html point}</span>
               </li>
             {/if}
           {/each}

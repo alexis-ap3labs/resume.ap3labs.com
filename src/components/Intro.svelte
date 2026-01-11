@@ -89,8 +89,7 @@
           class="text-base sm:text-lg text-light/70 max-w-[720px] mb-12 leading-relaxed"
           in:fly={{ y: 20, duration: 800, delay: 400 }}
         >
-          As a long-time contributor to various crypto projects and DeFi applications, 
-          I focus on <span class="font-bold">building innovative financial solutions</span> that combine technical excellence with practical applications.
+          As a long-time DeFi builder, I work across end-to-end onchain systems: from strategy and risk to vault infrastructure, protocol integrations, APIs, and user-facing products.
         </p>
 
         <div class="mt-12">
