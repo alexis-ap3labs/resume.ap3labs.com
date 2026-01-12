@@ -122,7 +122,7 @@
                     
                     <div style="margin-bottom: 20px; page-break-inside: avoid;">
                         <h3 style="color: #0a192f; font-size: 16px; margin-bottom: 5px;">DeFi Ops & Account Management @ <a href="https://merkl.xyz/" target="_blank" rel="noopener noreferrer" style="color: #FFA33C; text-decoration: none;">Merkl</a></h3>
-                        <p style="font-size: 12px; color: #64748b; margin-bottom: 10px;">October 2024 — Present</p>
+                        <p style="font-size: 12px; color: #64748b; margin-bottom: 10px;">October 2025 — Present</p>
                         <ul style="font-size: 13px; color: #64748b; line-height: 1.6; padding-left: 20px;">
                             <li>Parsed Merkl API data to validate incentive campaigns (eligibility conditions + reward computations).</li>
                             <li>Scoped integrations with partners to translate their incentive goals into campaign specs.</li>

@@ -21,7 +21,7 @@
     {
       title: "DeFi Ops & Account Management",
       company: "Merkl",
-      date: "October 2024 — Present",
+      date: "October 2025 — Present",
       points: [
         "Parsed Merkl API data to validate incentive campaigns (eligibility conditions + reward computations).",
         "Scoped integrations with partners to translate their incentive goals into campaign specs.",
