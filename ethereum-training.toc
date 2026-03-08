@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{The Birth of Ethereum}{5}{0}{1}
+\beamer@sectionintoc {2}{Smart Contracts \& Oracles}{16}{0}{2}
+\beamer@sectionintoc {3}{The Invention of Stablecoins}{25}{0}{3}
